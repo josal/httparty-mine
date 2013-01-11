@@ -1,5 +1,5 @@
 module HTTParty
-  # The default parser used by HTTParty, supports xml, json, html, yaml, and
+  # The default parser used by HTTParty, supports xml, json, html and
   # plain text.
   #
   # == Custom Parsers
@@ -45,8 +45,8 @@ module HTTParty
       'application/javascript' => :json,
       'text/javascript'        => :json,
       'text/html'              => :html,
-      'application/x-yaml'     => :yaml,
-      'text/yaml'              => :yaml,
+      # 'application/x-yaml'     => :yaml,
+      # 'text/yaml'              => :yaml,
       'text/plain'             => :plain
     }
 
@@ -116,9 +116,9 @@ module HTTParty
       Crack::JSON.parse(body)
     end
 
-    def yaml
-      YAML.load(body)
-    end
+    # def yaml
+    #   YAML.load(body)
+    # end
 
     def html
       body
